@@ -4,8 +4,8 @@
 
 Flappy Ball is an HTML5 canvas game inspired by the classic Flappy Bird. In this game, players control a bouncing ball, navigating it through obstacles while collecting power-ups and aiming for a high score.
 
-[!Demo](flappyball1.jpg)
-[!Demo](flappyball1.jpg)
+![Demo](flappyball1.jpg)
+![Demo](flappyball2.jpg)
 
 ## Features
 
