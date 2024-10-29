@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Ball</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score-container">Score: <span id="scoreDisplay">0</span></div>
+        <div id="highScoreDisplay">High Score: 0</div>
+        <div id="levelDisplay">Level: 1</div>
+        <div id="pauseButton">Pause</div>
+        <div id="powerUpIndicator">Power Up Active!</div>
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        <div id="startScreen" class="screen">
+            <h1>Flappy Ball</h1>
+            <p>Tap to bounce and avoid obstacles!<br>Collect power-ups for special abilities!</p>
+            <button id="startButton">Start Game</button>
+        </div>
+        <div id="playAgainScreen" class="screen" style="display: none;">
+            <h1>Game Over</h1>
+            <p>Score: <span id="finalScore">0</span></p>
+            <p>High Score: <span id="finalHighScore">0</span></p>
+            <button id="playAgainButton">Play Again</button>
+        </div>
+        <div id="pauseScreen" class="screen" style="display: none;">
+            <h1>Paused</h1>
+            <button id="resumeButton">Resume</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

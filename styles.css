@@ -1,0 +1,180 @@
+        :root {
+            --primary: #2196f3;
+            --primary-dark: #1976d2;
+            --accent: #ff4081;
+            --background: #0a1929;
+            --surface: #132f4c;
+            --text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, var(--surface), var(--background));
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: var(--text);
+            overflow: hidden;
+        }
+
+        .game-container {
+            position: relative;
+            padding: 20px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 0 40px rgba(0, 0, 0, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        #gameCanvas {
+            border-radius: 16px;
+            background: linear-gradient(135deg, #071a2c, #0d2b4a);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.5),
+                inset 0 2px 2px rgba(255, 255, 255, 0.1);
+        }
+
+        .screen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(19, 47, 76, 0.95);
+            padding: 40px;
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.4),
+                inset 0 2px 2px rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -40%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+
+        .screen h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            background: linear-gradient(135deg, #fff, #a2d2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .screen p {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--text);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 6px 12px rgba(33, 150, 243, 0.3),
+                inset 0 2px 5px rgba(255, 255, 255, 0.2);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 8px 20px rgba(33, 150, 243, 0.4),
+                inset 0 2px 5px rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, #2196f3, #2979ff);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 
+                0 4px 8px rgba(33, 150, 243, 0.3),
+                inset 0 2px 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .score-container {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 25px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        #powerUpIndicator {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            display: none;
+        }
+
+        @keyframes glowing {
+            0% { box-shadow: 0 0 5px var(--primary); }
+            50% { box-shadow: 0 0 20px var(--primary); }
+            100% { box-shadow: 0 0 5px var(--primary); }
+        }
+
+        .power-active {
+            animation: glowing 2s infinite;
+        }
+
+        #highScoreDisplay {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+            font-size: 0.9em;
+        }
+
+        #levelDisplay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+        }
+
+        #pauseButton {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 15px;
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+        }
